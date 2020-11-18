@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magTechClient/relais_list.dart';
 import 'flight_list.dart';
 import 'main.dart';
 
@@ -39,9 +40,10 @@ final bottomNavigationBarItemStyle = TextStyle(fontStyle: FontStyle.normal, colo
            
           child: 
           InkWell( 
-             onTap: (){
-                  
-               },
+            onTap: () {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => relaisList()));
+              },
            child: Icon(Icons.local_offer, color: Colors.black,)
             
             ),  
