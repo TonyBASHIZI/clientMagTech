@@ -69,17 +69,44 @@ class relaisList extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                             
-                              Image.asset("assets/$list[index]['photo']"),
-                              Text(
-                                list[index]['designation'],
+                              Image.asset("assets/images/carwash.jpg"),
+                              Container(
+                                padding: EdgeInsets.all(5),
+                                child: Text(
+                                  list[index]['designation'],
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                                
                               ),
-                              Stack(
-                                children: <Widget>[
-                                  Text(list[index]['description'])
-                                ],
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [BoxShadow(offset: Offset(0, 0),color: Colors.black45,blurRadius: 3)],
+                                  color: Colors.white,
+                                ),
+                                child: Stack(
+                                  children: <Widget>[
+                                   
+                                    Text(list[index]['description']),
+                                    FlatButton(onPressed: (){
+                                      
+                                    }, 
+                                    child: Text("Like")),
+                                    
+                                  ],
+                                  
+                                
+                                ),
+                                
                               )
                             ],
+                            
                           ),
+                          
                         ),
                       );
                     },
