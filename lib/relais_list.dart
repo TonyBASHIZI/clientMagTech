@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:magTechClient/CustomAppBar.dart';
 import 'package:magTechClient/CustomShapeClipper.dart';
 import 'package:magTechClient/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:magTechClient/utils/config.dart';
+import 'package:magTechClient/NotificationPlugin.dart';
 
 final Color discountBackgroungColor = Color(0xFFFF0000);
 final Color flishBorderColor = Color(0xFFEF772C);
@@ -18,13 +20,13 @@ class relaisList extends StatelessWidget {
 
     return jsonDecode(response.body);
   }
+
   Future getDataImg() async {
     var url = BaseUrl.img;
-    var response = await http.get(url);;
-
+    var response = await http.get(url);
     return jsonDecode(response.body);
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +70,6 @@ class relaisList extends StatelessWidget {
                           ),
                           child: Column(
                             children: <Widget>[
-                            
                               Image.asset("assets/images/carwash.jpg"),
                               Container(
                                 padding: EdgeInsets.all(5),
@@ -79,34 +80,29 @@ class relaisList extends StatelessWidget {
                                     fontSize: 25,
                                   ),
                                 ),
-                                
                               ),
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  boxShadow: [BoxShadow(offset: Offset(0, 0),color: Colors.black45,blurRadius: 3)],
+                                  boxShadow: [
+                                    BoxShadow(
+                                        offset: Offset(0, 0),
+                                        color: Colors.black45,
+                                        blurRadius: 3)
+                                  ],
                                   color: Colors.white,
                                 ),
                                 child: Stack(
                                   children: <Widget>[
-                                   
                                     Text(list[index]['description']),
-                                    FlatButton(onPressed: (){
-                                      
-                                    }, 
-                                    child: Text("Like")),
-                                    
+                                    FlatButton(
+                                        onPressed: () {}, child: Text("Like")),
                                   ],
-                                  
-                                
                                 ),
-                                
                               )
                             ],
-                            
                           ),
-                          
                         ),
                       );
                     },
@@ -313,3 +309,10 @@ class FlightDetailChip extends StatelessWidget {
     );
   }
 }
+
+onNotificationInLowerVersions(ReceivedNotification receivedNotification) {}
+onNotificationClick(String payload) {
+
+}
+
+

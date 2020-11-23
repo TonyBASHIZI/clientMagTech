@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magTechClient/CustomAppBar.dart';
 import 'package:magTechClient/CustomShapeClipper.dart';
+import 'package:magTechClient/NotificationPlugin.dart';
 import 'package:magTechClient/expedier.dart';
 import 'package:magTechClient/flight_list.dart';
 import 'package:magTechClient/relais_list.dart';
@@ -55,6 +56,12 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
   var selectedLocationIndex = 0;
 
   @override
+  void initState() {
+    super.initState();
+    notificationPlugin.setListenerLowerVersions(onNotificationInLowerVersions);
+    notificationPlugin.setOnNotificationClick(onNotificationClick);
+  }
+
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
@@ -163,9 +170,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          FlightListingScreen()
-                                          )
-                                          );
+                                          FlightListingScreen()));
                             },
                             child: Icon(
                               Icons.credit_card,
