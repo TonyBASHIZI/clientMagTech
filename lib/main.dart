@@ -58,8 +58,8 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
   @override
   void initState() {
     super.initState();
-    notificationPlugin.setListenerLowerVersions(onNotificationInLowerVersions);
-    notificationPlugin.setOnNotificationClick(onNotificationClick);
+    // notificationPlugin.setListenerLowerVersions(onNotificationInLowerVersions);
+    // notificationPlugin.setOnNotificationClick(onNotificationClick);
   }
 
   Widget build(BuildContext context) {

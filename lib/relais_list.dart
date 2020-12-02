@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:magTechClient/CustomAppBar.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:magTechClient/CustomAppBar.dart';
 import 'package:magTechClient/CustomShapeClipper.dart';
 import 'package:magTechClient/main.dart';
 import 'package:http/http.dart' as http;
@@ -310,9 +310,9 @@ class FlightDetailChip extends StatelessWidget {
   }
 }
 
-onNotificationInLowerVersions(ReceivedNotification receivedNotification) {}
-onNotificationClick(String payload) {
+// onNotificationInLowerVersions(ReceivedNotification receivedNotification) {}
+// onNotificationClick(String payload) {
 
-}
+// }
 
 
